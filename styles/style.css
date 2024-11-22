@@ -1,8 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
-
+* {
+}
 .page {
   display: grid;
-  width: var(--page-width);
   background-position: center;
   background-size: cover;
   background-attachment: fixed;
@@ -62,7 +62,7 @@
   text-underline-position: from-font;
   text-decoration-skip-ink: none;
   text-wrap: nowrap;
-  color: rgba(219, 0, 255, 1);
+  color: var(--color_text_title);
   text-shadow: 4px 4px 0px 0px rgba(255, 0, 112, 1);
 }
 .header_title {
@@ -76,14 +76,12 @@
   text-underline-position: from-font;
   text-decoration-skip-ink: none;
   margin-left: 513px;
-  background-color: rgba(255, 0, 112, 1);
-  color: rgba(0, 0, 40, 1);
+  background-color: var(--bg_color_title);
+  color: var(--bg_color_text_title);
 }
 .main {
   display: grid;
-  width: 1024px;
   background-color: rgba(0, 0, 40, 1);
-  border: 1px solid white;
   margin-block-start: 60px;
 }
 .section_why {
@@ -92,8 +90,7 @@
   grid-template-columns: 1fr 3fr;
   column-gap: 20px;
   margin-left: 20px;
-  margin-right: 20px;
-  border: 1px solid white;
+  margin-right: 2 0px;
   margin-bottom: 80px;
 }
 .main_question_text {
@@ -106,12 +103,12 @@
   text-align: left;
   text-underline-position: from-font;
   text-decoration-skip-ink: none;
-  color: rgba(255, 0, 112, 1);
+  color: var(--main_question_color_text);
   margin: 0;
   padding: 0;
 }
 .main_title {
-  background-color: rgba(255, 0, 112, 1);
+  background-color: var(--main_bg_color);
   font-family: IBM Plex Mono;
   font-size: 18px;
   font-weight: 700;
@@ -131,7 +128,7 @@
   text-align: left;
   text-underline-position: from-font;
   text-decoration-skip-ink: none;
-  color: rgba(241, 178, 206, 1);
+  color: var(--main_description_color_text);
   margin-bottom: 20px;
   margin-top: 10px;
   padding: 0;
@@ -144,42 +141,108 @@
   text-align: left;
   text-underline-position: from-font;
   text-decoration-skip-ink: none;
-  color: rgba(241, 178, 206, 1);
+  color: var(--main_description_color_text);
   margin-bottom: 0px;
   margin-top: 10px;
   padding: 0;
 }
-.main_title.sub{
+.main_title.sub {
   margin-top: 20px;
   margin-bottom: 10px;
 }
-.section_what{
+.section_what {
   display: grid;
   grid-template-rows: auto auto auto;
   grid-template-columns: 1fr 1fr 1fr;
   column-gap: 20px;
   margin-left: 20px;
   margin-right: 20px;
-  border: 1px solid white;
   margin-bottom: 80px;
 }
-.block_what_description_mn{
+.block_what_description_mn {
   grid-column: 1;
 }
-.block_what_description_foot{
+.block_what_description_foot {
   grid-column: 2;
 }
-.block_what_description_gadjet{
+.block_what_description_gadjet {
   grid-column: 3;
 }
-.section_how{
+.section_how {
   display: grid;
   grid-template-rows: auto auto auto;
   grid-template-columns: 1fr 3fr;
   column-gap: 20px;
   margin-left: 20px;
   margin-right: 20px;
-  border: 1px solid white;
   margin-bottom: 80px;
 }
-
+.section_img {
+  display: grid;
+  margin-left: 20px;
+  margin-right: 20px;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto auto auto;
+  column-gap: 19px;
+  row-gap: 25px;
+}
+.block_with_title {
+  grid-column-start: 1;
+  grid-column-end: 4;
+}
+.img_sunset {
+  width: 649px;
+  grid-column: 1 / 3;
+  grid-row: 2;
+}
+.img_tape {
+  grid-column: 1;
+  grid-row: 3 / 5;
+  width: 315px;
+  height: 768px;
+}
+.img_str {
+  width: 649px;
+  height: 428px;
+  grid-column: 2/4;
+  grid-row: 4/5;
+}
+.img_book {
+  width: 315px;
+  height: 315px;
+  grid-row: 3;
+  grid-column: 2;
+}
+.img_ice {
+  width: 315px;
+  height: 595px;
+  grid-row: 2 / 4;
+  grid-column: 3;
+}
+.footer {
+  display: grid;
+  margin-block-start: 60px;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto auto auto;
+}
+.block_with_footer_text {
+  width: 471px;
+  margin-top: 319px;
+  margin-bottom: 319px;
+  grid-column: 2;
+  grid-row: 2;
+  padding: 0;
+}
+.footer_text {
+  font-family: IBM Plex Mono;
+  font-size: 157px;
+  font-weight: 700;
+  line-height: 129.53px;
+  text-align: left;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+  color: var(--footer_color_text);
+  margin: 0;
+}
+@media (width = 768) {
+}
